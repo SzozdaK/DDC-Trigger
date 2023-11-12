@@ -17,11 +17,11 @@ port = serial.Serial('/dev/ttyUSB0') #Serial port is a USB-to-RS485 cable.
 while True:
     time.sleep(0.2)
     port.write(b'info\r') #Send 'info' to Aten US3344i switch; it will respond with the command status, port number, and current firmware version.
-    o = b''
-    while port.inWaiting() > 0:
-        o += port.readline()
+    out = b'' #Initialise port output.
+    while port.inWaiting() > 0: #If there are bytes in the output buffer...
+        out += port.readline() #Write bytes to out.
     try:
-        cn = int(re.findall(b'PORT: 0.',o)[0].decode()[-1]) #Extract current port number of switch.
+        cn = int(re.findall(b'PORT: 0.',out)[0].decode()[-1]) #Extract current port number of switch.
         pn = ddc_console(pn,cn) #Update past port number and send corresponding DDC command to switch input source.
     except IndexError:
         continue
