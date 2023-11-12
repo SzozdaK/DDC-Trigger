@@ -8,7 +8,7 @@ import re
 pn = 0 #Initialise past port number as 0. When script first runs, the monitor should flash.
 
 def ddc_console(pn,cn):
-    ddcmap = [0x19,0x0f,0x11,0x12] #Addresses of individual input sources: ThunderBolt, DisplayPort, HDMI 1, and HDMI 2, respectively.
+    ddcmap = [0x19,0x0f,0x11,0x12] #Addresses of individual input sources for Dell UP2720Q: Thunderbolt, DisplayPort, HDMI 1, and HDMI 2, respectively.
     if cn != pn:
         subprocess.run(f'/usr/bin/ddcutil setvcp 60 {ddcmap[cn-1]}',shell=True) #Switch input source is feature 60 of the MCCS.
     return cn
