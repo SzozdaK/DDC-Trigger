@@ -6,7 +6,7 @@ This script requires ddcutil and python-serial to be installed.
 Hardware requirements:
 
 !!! A monitor that has at least three input ports, with one of those ports free for the device to take up. Ideally the device should take up an HDMI port, as HDMI-to-HDMI cables are cheap, but other ports should work fine, too, with the equivalent cable (I avoid adapters, personally, but they should work as they shouldn’t block the DDC lines).
-        The monitor must be able to accept the DDC command to switch input source from an input source that is not the currently active source. The creator of ddcutil, says this is not necessarily a universal feature. I think Dell monitors are fine, though.
+        The monitor must be able to accept the DDC command to switch input source from an input source that is not the currently active source. The creator of ddcutil, rockowitz, says this is not necessarily a universal feature. I think Dell monitors are fine, though.
 
 Any Raspberry Pi model with an HDMI output (micro- or mini-HDMI is fine). A Model B has two output ports, which could be useful for those looking to switch two monitors at once (provided they both meet the previous requirement).
 
