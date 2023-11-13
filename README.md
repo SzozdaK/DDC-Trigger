@@ -1,5 +1,7 @@
 # DDC-Trigger
-KVM switch solution utilising an industrial USB switch as the trigger and a Raspberry Pi as the DDC console that changes the input source of the connected monitor. This tandem switch implements KVM switch functionality without interfering with video output in any way. By connecting the RPi via video cable to the monitor we expose the monitor's I2C interface (if it exists) and can enact feature 60 of the Monitor Command and Control Specification (MCCS): switch input source.
+KVM switch solution utilising an industrial USB switch as the KM component and a Raspberry Pi as a DDC console that changes the input source of the connected monitor upon detecting a port change on the USB switch. This tandem switch thus implements KVM switch functionality without interfering with video output in any way. By connecting the RPi via video cable to the monitor we expose the monitor's I2C interface (if it exists) and can use feature 60 of the Monitor Command and Control Specification (MCCS): switch input source.
+
+This script requires ddcutil and python-serial to be installed.
 
 Hardware requirements:
 
